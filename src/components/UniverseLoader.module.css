@@ -1,0 +1,74 @@
+.screen {
+  --electric: #348dff;
+  --ice: #a2edff;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: 110px 24px 80px;
+  color: #eef6ff;
+  text-align: center;
+  background: radial-gradient(ellipse at 50% 42%, #102a4a 0%, #071120 35%, #030710 72%);
+}
+.overlay { position: absolute; inset: 0; z-index: 5; overflow-y: auto; }
+.brand { position: absolute; top: 35px; left: clamp(24px, 5vw, 80px); font-size: 12px; }
+.stars {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: .5;
+  background-image: radial-gradient(1px 1px at 12% 24%, #b5dfff 99%, transparent), radial-gradient(1px 1px at 78% 64%, #8caacb 99%, transparent), radial-gradient(1px 1px at 48% 12%, #8caacb 99%, transparent);
+  background-size: 317px 283px, 433px 397px, 521px 461px;
+  mask-image: radial-gradient(ellipse, transparent 18%, #000 80%);
+}
+.content { width: min(100%, 560px); }
+.system { position: relative; width: min(300px, 75vw); aspect-ratio: 1; margin: 0 auto 32px; perspective: 650px; }
+.halo { position: absolute; inset: -15%; border-radius: 50%; background: radial-gradient(circle, #1687ff30, #136bff12 42%, transparent 68%); animation: breathe 5s ease-in-out infinite alternate; }
+.planet {
+  position: absolute;
+  inset: 29%;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #092145;
+  box-shadow: inset 5px 3px 12px #a2edff70, 0 0 2px 1px #91e5ff, 0 0 22px #228aff80, 0 0 65px #136bff35;
+}
+.surface {
+  position: absolute;
+  inset: -15% -100%;
+  background: repeating-linear-gradient(165deg, #183654 0%, #2c658b 8%, #102641 13%, #3f8aae 17%, #163959 24%, #183654 33.333%);
+  filter: blur(3px);
+  animation: surface-drift 16s linear infinite;
+}
+.shade { position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(circle at 28% 23%, #b6edff65, transparent 32%, #010712d9 78%); box-shadow: inset -12px -10px 22px #010510, inset 2px 2px 5px #a2edff80; }
+.corona {
+  position: absolute;
+  inset: 27.5%;
+  border-radius: 50%;
+  background: conic-gradient(transparent 12%, #236cff60 24%, var(--ice) 30%, transparent 39%, transparent 62%, var(--electric) 77%, transparent 90%);
+  mask-image: radial-gradient(circle closest-side, transparent 89%, #000 95%, transparent 100%);
+  animation: orbit-turn 7s linear infinite;
+}
+.orbit { position: absolute; border: 1px solid #609ee83d; border-radius: 50%; transform-style: preserve-3d; }
+.orbitOuter { inset: 0; transform: rotateZ(-28deg) rotateX(64deg); }
+.orbitInner { inset: 9%; transform: rotateZ(36deg) rotateX(58deg); border-color: #82d6ff30; }
+.satelliteTrack { position: absolute; inset: -1px; border-radius: inherit; border-top: 1px solid #96e8ffb0; animation: orbit-turn 6s linear infinite; }
+.satelliteTrack i { position: absolute; top: 50%; left: -4px; width: 7px; height: 7px; border-radius: 50%; background: #d4f7ff; box-shadow: 0 0 10px #a2edff, 0 0 22px #348dff; }
+.orbitInner .satelliteTrack { animation-duration: 9s; animation-direction: reverse; }
+.orbitInner .satelliteTrack i { width: 5px; height: 5px; background: #77abff; }
+.scan { position: absolute; inset: 15%; border: 1px solid #57b3ff45; border-radius: 50%; animation: scan-wave 4s ease-out infinite; }
+.eyebrow { color: #85b9e1; font: 10px 'Courier New', monospace; letter-spacing: .22em; }
+.status h1 { margin: 16px 0 12px; font-size: clamp(26px, 4vw, 38px); font-weight: 400; letter-spacing: -.045em; line-height: 1.15; }
+.status p { margin: 0; color: #98abc2; font-size: 13px; line-height: 1.6; text-wrap: balance; }
+.signal { width: 150px; height: 2px; margin: 28px auto 0; overflow: hidden; border-radius: 2px; background: #25405d; }
+.signal span { display: block; width: 60%; height: 100%; background: linear-gradient(90deg, transparent, var(--ice), transparent); animation: signal-sweep 2.4s ease-in-out infinite; }
+.caption { position: absolute; bottom: 28px; left: 24px; right: 24px; color: #748ba7; font: 9px 'Courier New', monospace; letter-spacing: .16em; }
+@keyframes orbit-turn { to { transform: rotate(360deg); } }
+@keyframes surface-drift { to { transform: translateX(33.333%); } }
+@keyframes breathe { from { opacity: .5; transform: scale(.9); } to { opacity: 1; transform: scale(1.08); } }
+@keyframes scan-wave { from { transform: scale(.65); opacity: 0; } 25% { opacity: .7; } to { transform: scale(1.65); opacity: 0; } }
+@keyframes signal-sweep { from { transform: translateX(-100%); } to { transform: translateX(270%); } }
+@media (max-width: 600px) { .system { width: 240px; max-width: 75vw; margin-bottom: 24px; } .eyebrow { font-size: 9px; letter-spacing: .16em; } }
+@media (max-height: 650px) { .system { width: 190px; margin-bottom: 18px; } .screen { padding-top: 95px; } }
+@media (prefers-reduced-motion: reduce) { .screen *, .screen *::before, .screen *::after { animation: none; } .scan { opacity: .3; } .signal span { margin: auto; } }

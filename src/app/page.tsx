@@ -10,7 +10,30 @@ export default function LandingPage() {
       <span className="wordmark"><BrandMark /> REPOVERSE</span>
     </header>
 
-    <div className="portal-horizon" aria-hidden="true" />
+    <div className="portal-planet" aria-hidden="true">
+      <svg className="portal-planet-filters" width="0" height="0" focusable="false">
+        <defs>
+          <filter id="planet-plasma" x="-10%" y="-10%" width="120%" height="120%">
+            <feTurbulence type="fractalNoise" baseFrequency=".012 .045" numOctaves="3" seed="7" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="16" xChannelSelector="R" yChannelSelector="G" />
+            <feGaussianBlur stdDeviation="1.2" />
+          </filter>
+        </defs>
+      </svg>
+      <div className="portal-planet-aura" />
+      <div className="portal-horizon">
+        <div className="portal-planet-surface">
+          <div className="portal-planet-terrain" />
+          <div className="portal-planet-clouds" />
+        </div>
+        <div className="portal-planet-energy">
+          <div className="portal-planet-plasma portal-planet-plasma--outer" />
+          <div className="portal-planet-plasma portal-planet-plasma--inner" />
+        </div>
+        <div className="portal-planet-rim" />
+      </div>
+      <div className="portal-planet-flare" />
+    </div>
 
     <section className="portal-content">
       <h1>Your code.<br /><span>A whole universe.</span></h1>
