@@ -3,13 +3,14 @@
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { BrandMark } from '@/components/BrandMark';
+import { UniverseLoader } from '@/components/UniverseLoader';
 import { useCallback, useMemo, useState } from 'react';
 import type { GithubUniverse, UniverseRepository } from '@/lib/github/types';
 import { PLANET_STYLES } from './visuals/planetStyles';
 import type { CameraMode, PlanetSelection } from './camera/types';
 import { RepoDetails } from './ui/RepoDetails';
 
-const UniverseCanvas = dynamic(() => import('./scene/UniverseCanvas').then((module) => module.UniverseCanvas), { ssr: false, loading: () => <div className="canvas-loading" aria-hidden="true" /> });
+const UniverseCanvas = dynamic(() => import('./scene/UniverseCanvas').then((module) => module.UniverseCanvas), { ssr: false, loading: () => <UniverseLoader scene /> });
 
 export function UniverseExperience({ universe, isFixture }: { universe: GithubUniverse; isFixture: boolean }) {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
