@@ -1,7 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="14" fill="#07131F"/>
-  <ellipse cx="32" cy="32" rx="27" ry="11" transform="rotate(-32 32 32)" stroke="#88AFC8" stroke-width="2.5"/>
-  <circle cx="32" cy="32" r="13" fill="#D8EAF4"/>
-  <path d="m27 28-4 4 4 4m10-8 4 4-4 4m-2-10-6 12" stroke="#183246" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="53.7" cy="17.8" r="3.2" fill="#D8EAF4"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 68" fill="none" color="#E8F2F8">
+  <rect width="68" height="68" rx="16" fill="#050A13"/>
+  <defs>
+  <mask id="repoverse-orbit" maskUnits="userSpaceOnUse" x="0" y="0" width="68" height="68">
+  <rect width="68" height="68" fill="white"/>
+  <path d="M6 43C24 43 44 32 62 16V22C46 39 26 49 6 49Z" fill="black"/>
+  </mask>
+  </defs>
+  <path mask="url(#repoverse-orbit)" fill="currentColor" fill-rule="evenodd" d="M12 58V12H33C47.36 12 56 19.46 56 31C56 39.06 51.54 45.03 43.88 47.68L56 58H41L27 45H23V58H12ZM23 23V34H32C40.44 34 45 30.97 45 27.5C45 24.67 41.39 23 34 23H23Z"/>
 </svg>

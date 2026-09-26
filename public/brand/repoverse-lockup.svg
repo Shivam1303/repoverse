@@ -1,8 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 366 64" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 386 68" fill="#E8F2F8" color="#E8F2F8">
   <title>Repoverse</title>
-  <ellipse cx="32" cy="32" rx="27" ry="11" transform="rotate(-32 32 32)" stroke="#88AFC8" stroke-width="2.5"/>
-  <circle cx="32" cy="32" r="13" fill="#D8EAF4"/>
-  <path d="m27 28-4 4 4 4m10-8 4 4-4 4m-2-10-6 12" stroke="#183246" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="53.7" cy="17.8" r="3.2" fill="#D8EAF4"/>
-  <text x="77" y="41" fill="#E8F2F8" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="800" letter-spacing="5">REPOVERSE</text>
+  <defs>
+  <mask id="repoverse-orbit" maskUnits="userSpaceOnUse" x="0" y="0" width="68" height="68">
+  <rect width="68" height="68" fill="white"/>
+  <path d="M6 43C24 43 44 32 62 16V22C46 39 26 49 6 49Z" fill="black"/>
+  </mask>
+  </defs>
+  <path mask="url(#repoverse-orbit)" fill="currentColor" fill-rule="evenodd" d="M12 58V12H33C47.36 12 56 19.46 56 31C56 39.06 51.54 45.03 43.88 47.68L56 58H41L27 45H23V58H12ZM23 23V34H32C40.44 34 45 30.97 45 27.5C45 24.67 41.39 23 34 23H23Z"/>
+  <path transform="translate(86 19)" fill-rule="evenodd" d="M0 30V0H12C20 0 24 4 24 10C24 15 21 18 17 19L25 30H17L9 19H6V30ZM6 5V14H12C16 14 18 13 18 10C18 7 16 5 12 5Z"/>
+  <path transform="translate(120 19)" fill-rule="evenodd" d="M0 0H23V5H6V12H21V17H6V25H23V30H0Z"/>
+  <path transform="translate(154 19)" fill-rule="evenodd" d="M0 30V0H12C20 0 24 4 24 10C24 17 20 20 12 20H6V30ZM6 5V15H12C16 15 18 13 18 10C18 7 16 5 12 5Z"/>
+  <path transform="translate(188 19)" fill-rule="evenodd" d="M13 0C22 0 26 6 26 15S22 30 13 30S0 24 0 15S4 0 13 0ZM13 5C8 5 6 9 6 15S8 25 13 25S20 21 20 15S18 5 13 5Z"/>
+  <path transform="translate(222 19)" fill-rule="evenodd" d="M0 0H7L14 23L21 0H28L18 30H10Z"/>
+  <path transform="translate(258 19)" fill-rule="evenodd" d="M0 0H23V5H6V12H21V17H6V25H23V30H0Z"/>
+  <path transform="translate(292 19)" fill-rule="evenodd" d="M0 30V0H12C20 0 24 4 24 10C24 15 21 18 17 19L25 30H17L9 19H6V30ZM6 5V14H12C16 14 18 13 18 10C18 7 16 5 12 5Z"/>
+  <path transform="translate(326 19)" fill-rule="evenodd" d="M23 2V8C20 6 17 5 13 5C8 5 6 6 6 9C6 11 8 12 14 13C21 14 25 16 25 22C25 27 21 30 13 30C8 30 4 29 0 27V21C4 24 8 25 13 25C17 25 19 24 19 22C19 20 17 19 11 18C4 17 0 14 0 9C0 3 5 0 13 0C17 0 21 1 23 2Z"/>
+  <path transform="translate(360 19)" fill-rule="evenodd" d="M0 0H23V5H6V12H21V17H6V25H23V30H0Z"/>
 </svg>
